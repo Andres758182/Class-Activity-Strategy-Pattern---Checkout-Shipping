@@ -5,7 +5,7 @@ from strategy_checkout.models import Order
 from strategy_checkout.shipping import (
     ExpressShipping,
     PickupShipping,
-    #SameDayShipping,
+    SameDayShipping,
     ShippingCostStrategy,
     StandardShipping,
 )
@@ -38,7 +38,7 @@ def test_pickup_is_free():
 
 
 # --- Same Day (nueva) ---
-'''
+
 def test_same_day_shipping_uses_149_plus_18_per_kg():
     # 149 + 18 * 3.5 = 212
     assert Checkout(SameDayShipping()).shipping_cost(Order(500.0, 3.5)) == 212.0
@@ -46,7 +46,7 @@ def test_same_day_shipping_uses_149_plus_18_per_kg():
 
 def test_same_day_with_zero_weight_is_just_the_base():
     assert Checkout(SameDayShipping()).shipping_cost(Order(500.0, 0.0)) == 149.0
-'''
+
 
 # --- Checkout ---
 
