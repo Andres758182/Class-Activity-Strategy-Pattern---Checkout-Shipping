@@ -53,11 +53,11 @@ def test_same_day_with_zero_weight_is_just_the_base():
 def test_total_adds_shipping_cost():
     assert Checkout(StandardShipping()).total(Order(500.0, 2.0)) == 549.0
 
-'''
+
 def test_total_with_same_day():
     # 500 + (149 + 18 * 2) = 685
     assert Checkout(SameDayShipping()).total(Order(500.0, 2.0)) == 685.0
-    '''
+    
 
 
 def test_checkout_rejects_objects_that_are_not_strategies():
